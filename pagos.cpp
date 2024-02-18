@@ -1,3 +1,21 @@
+/*
+ * Se ingresa un conjunto de ternas (d, p, i), donde d es el DNI de una persona, p la
+ * fecha de pago e i el importe pagado en la fecha p. El lote de datos se ingresa
+ * ordenado (agrupado) de acuerdo con el número del DNI. De este modo, se garantiza
+ * que todos los pagos efectuados por una misma persona se ingresarán juntos (uno
+ * detrás del otro).
+ *
+ * Se pide:
+ * 1. Por cada persona:
+ *    a. Cantidad de pagos efectuados.
+ *    b. Importe promedio de los pagos.
+ *    c. Cantidad total abonada.
+ * 2. En general:
+ *    a. Cuántas personas efectuaron al menos un pago.
+ *    b. Promedio de los importes pagados.
+ *    c. DNI de la persona que, en total, abonó la mayor cantidad de dinero.
+ */
+
 #include <iostream>
 #include <string>
 #include "main.hpp"
@@ -19,12 +37,6 @@ struct Pago {
    Fecha fecha;
    double importe;
 };
-
-/* + -------------------- +
- * + Funciónes auxiliares +
- * + -------------------- +
- */
-
 
 /* + --------- +
  * + Funciones +
