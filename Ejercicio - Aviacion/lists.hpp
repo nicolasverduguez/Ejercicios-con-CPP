@@ -250,5 +250,4 @@ T dequeue(Node<T>*& q)
    return elmFirst;
 }
 
-
 #endif
