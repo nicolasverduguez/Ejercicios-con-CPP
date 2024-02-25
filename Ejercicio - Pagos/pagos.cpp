@@ -18,7 +18,6 @@
 
 #include <iostream>
 #include <string>
-#include "main.hpp"
 using namespace std;
 
 /* + ----------- +
