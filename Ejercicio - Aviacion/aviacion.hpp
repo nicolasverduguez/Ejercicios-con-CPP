@@ -7,13 +7,8 @@
 #include <cstring>
 #include <stdlib.h>
 #include <cmath>
-#include "biblioteca/funciones/strings.hpp"
-#include "biblioteca/funciones/tokens.hpp"
-#include "biblioteca/funciones/files.hpp"
-#include "biblioteca/tads/Coll.hpp"
-#include "biblioteca/tads/Array.hpp"
-#include "biblioteca/tads/Map.hpp"
-#include "biblioteca/tads/List.hpp"
+#include "files.hpp"
+#include "List.hpp"
 using namespace std;
 
 /* -- Estructuras -- */
