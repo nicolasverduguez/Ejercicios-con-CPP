@@ -50,7 +50,7 @@ int main()
 {
 
    /* -- Leo los archivos de consulta -- */
-   List<Ciudad> lstCiudades = subirCiudades();
+   List<RCiudad> lstRCiudades = subirCiudades();
    List<RVuelo> lstRVuelos = subirVuelos();
    List<Cliente> lstClientes = list<Cliente>();
 
@@ -60,16 +60,30 @@ int main()
 
    while (!feof(f)) {
 
-      bool reservaAceptada = procesarReserva(res, lstRVuelos);
+      /* -- Proceso la reserva -- */
+      bool reservaAceptada = procesarReserva(res, lstRCiudades, lstRVuelos);
 
+      /* -- Verifico si existen lugares para reservar -- */
       if (reservaAceptada) {
+
+         /* -- Obtengo el cliente -- */
          Cliente* cli = obtenerCliente(res, lstClientes);
-         int cantMillas = calcularMillas(res, lstCiudades, lstRVuelos);
+
+         /* -- Calculo las millas -- */
+         int cantMillas = calcularMillas(res, lstRCiudades, lstRVuelos);
+
+         /* -- Sumo las millas -- */
          sumarMillas(cli, cantMillas);
       }
 
+      /* -- Leo la siguiente reserva -- */
       res = read<Reserva>(f);
    }
+
+   /* -- Mostrar resultados -- */
+   mostrarEleccionDeFamilias(lstRCiudades);
+   mostrarDetalleDeVuelos(lstRVuelos);
+   mostrarMillasXCliente(lstClientes);
 
    return 0;
 }
